@@ -1,0 +1,20 @@
+va Thread Benefits
+
+Java Threads are lightweight compared to processes, it takes less time and resource to create a thread.
+Threads share their parent process data and code
+Context switching between threads is usually less expensive than between processes.
+Thread intercommunication is relatively easy than process communication.
+
+Java provides two ways to create a thread programmatically.
+1. Implementing the java.lang.Runnable interface and overwrite run() method.
+2. Extending the java.lang.Thread class and overwrite run() method.
+
+
+Inheritance, extend keyword is used.
+
+Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another. With the use of inheritance the information is made manageable in a hierarchical order.
+
+The class which inherits the properties of other is known as subclass (derived class, child class) and the class whose properties are inherited is known as superclass (base class, parent class).
+
+extends Keyword
+extends is the keyword used to inherit the properties of a class. Following is the syntax of extends keyword.

@@ -1,0 +1,62 @@
+// Fig. 20.16: SynchronizedBuffer.java
+ 2   // Synchronizing access to shared mutable data using Object
+ 3   // methods wait and notifyAll.
+ 4   public class SynchronizedBuffer implements Buffer
+ 5   {
+ 6      private int buffer = -1; // shared by producer and consumer threads
+ 7      private boolean occupied = false;
+ 8 
+ 9      // place value into buffer
+10      public synchronized void blockingPut(int value)
+11         throws InterruptedException                 
+12      {
+13         // while there are no empty locations, place thread in waiting state
+14         while (occupied)  
+15         {
+16            // output thread information and buffer information, then wait
+17            System.out.println("Producer tries to write."); // for demo only
+18            displayState("Buffer full. Producer waits."); // for demo only
+19            wait();
+20         }
+21 
+22         buffer = value; // set new buffer value 
+23 
+24         // indicate producer cannot store another value 
+25         // until consumer retrieves current buffer value 
+26         occupied = true;                                
+27 
+28         displayState("Producer writes " + buffer); // for demo only
+29 
+30         notifyAll(); // tell waiting thread(s) to enter runnable state 
+31      } // end method blockingPut; releases lock on SynchronizedBuffer
+32 
+33      // return value from buffer
+34      public synchronized int blockingGet() throws InterruptedException
+35      {
+36         // while no data to read, place thread in waiting state
+37         while (!occupied)
+38         {
+39            // output thread information and buffer information, then wait
+40            System.out.println("Consumer tries to read."); // for demo only
+41            displayState("Buffer empty. Consumer waits."); // for demo only
+42            wait();
+43         }
+44 
+45         // indicate that producer can store another value 
+46         // because consumer just retrieved buffer value  
+47         occupied = false;                                
+48 
+49         displayState("Consumer reads " + buffer); // for demo only
+50 
+51         notifyAll(); // tell waiting thread(s) to enter runnable state 
+52 
+53         return buffer;
+54      } // end method blockingGet; releases lock on SynchronizedBuffer
+55 
+56      // display current operation and buffer state; for demo only
+57      private synchronized void displayState(String operation)
+58      {
+59         System.out.printf("%-40s%d\t\t%b%n%n", operation, buffer,
+60            occupied);
+61      }
+62   } // end class SynchronizedBuffer
