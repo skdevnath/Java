@@ -18,7 +18,10 @@ public class InFixTraversalMainMethod {
 		root.right.right = new Node(9);
 		root.right.left = new Node(7);
 		
-		/* Stack collection is deprecated it's usage is discouraged in favor of
+		/* Sandip:
+		   Not sure we want to push left first. My google doc says push right first in the stack so that left element 
+		   get pulled, when we accss top of the stack.
+		Stack collection is deprecated it's usage is discouraged in favor of
 		 * Deque, ArrayDeque. The ArrayDeque and the Deque interface are faster
 		 * and newer collection.*/
 	    Deque<Node> stack = new ArrayDeque<Node>();
