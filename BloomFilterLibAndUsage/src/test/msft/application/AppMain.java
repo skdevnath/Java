@@ -23,17 +23,24 @@ public class AppMain {
 
     public static void main(String args[]) {
         logger.info("Initializing Bloofilter for word dictionary");
-        BloomFilter wordBfDB = new BloomFilter(logger, (1 << 16) - 1, 4);
 
-        // To test extreme condition, I set filterSz to 1, with this all non existing
-        // check test fails. Which is expected as only one bit to play with.
-        // BloomFilter wordBfDB = new BloomFilter(logger, (1 << 1) - 1, 4);
-        // Above check hash index's hitting the boundary elements, there is no out of range array access.
+        // Test case 1:
+        // To test extreme condition, I set filterSz to 1, with this if a word doesn't exist,
+        // we still get false positive result i.e. query respond saying that element exists.
+        // This is expected as only one bit to play with.
+        //BloomFilter wordBfDB = new BloomFilter(logger, (1 << 1) - 1, 4);
+        // Above check hash index's hitting the boundary bits in BloomFilter,
+        // it checks, if there is no out of range array access.
 
-        // Another extreme condition: I set filterSz to 3, with this few non existing
-        // check test passes. Which is expected as atleast 3 bits to play with.
-        // BloomFilter wordBfDB = new BloomFilter(logger, (1 << 2) - 1, 4);
-        // Above check hash index's hitting the boundary elements, there is no out of range array access.
+        // Test case 2:
+        // Another extreme condition: I set filterSz to 3, it is also similar to above.
+        //BloomFilter wordBfDB = new BloomFilter(logger, (1 << 2) - 1, 4);
+        // Above check hash index's hitting the boundary elements, there is no out of
+        // range array access.
+
+        // Test case 3:
+        // Let's try use max number of indexes i.e. 8
+        BloomFilter wordBfDB = new BloomFilter(logger, (1 << 16) - 1, 8);
 
         // Add few test words to our dictionary
         String[] myTestWords = {"test", "this", "program"};
@@ -55,7 +62,7 @@ public class AppMain {
                 if (wordBfDB.checkValueIfExists(word)) {
                     logger.fine(" Found in our dictionary..PASSED.");
                 } else {
-                    logger.fine(" Not able to find in our dictionary..BAD..");
+                    logger.fine(" Not able to find in our dictionary..FAILED..");
                 }
             } catch (BfException ex) {
                 logger.severe("Error during checking work:" + ex);
@@ -69,7 +76,7 @@ public class AppMain {
             logger.fine(String.format("Checking word: \"%s\"", word));
             try {
                 if (wordBfDB.checkValueIfExists(word)) {
-                    logger.fine(" Found in our dictionary..BAD...");
+                    logger.fine(" Found in our dictionary..FAILED...");
                 } else {
                     logger.fine(" Not able to find in our dictionary.PASSED..");
                 }

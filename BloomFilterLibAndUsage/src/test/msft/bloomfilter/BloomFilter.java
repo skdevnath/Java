@@ -14,7 +14,7 @@ public class BloomFilter {
     int filterSize2Power = 0;
     int hashIndexes = 0;
     public static int MAX_HASH_INDEXES = 8;
-    public static int MAX_FILTER_SIZE = Integer.MAX_VALUE; // Assuming 2gig bit are enough for now
+    public static int MAX_FILTER_SIZE = Integer.MAX_VALUE; // TODO: Assuming 2gig bit are enough for now
     Logger logger;
 
     public BloomFilter(Logger logger, long filterSZ, int hashIndexes) {
@@ -39,13 +39,14 @@ public class BloomFilter {
         //      from Digest functions.
 
         this.filterSize =  1 << filterSize2Power;
-        while (this.filterSize < filterSZ) {
+        while (this.filterSize <= filterSZ) {
             filterSize2Power++;
             this.filterSize =  1 << filterSize2Power;
         }
+        logger.info("Number of bits required: " + filterSize2Power);
 
         // Now allocate the bloom filter of actual size, all bits will be false initially.
-        bitSet = new BitSet(1 << filterSize2Power);
+        bitSet = new BitSet(this.filterSize);
     }
 
     private BigInteger calculateHash(String value) throws NoSuchAlgorithmException  {
@@ -59,13 +60,14 @@ public class BloomFilter {
         try {
             BigInteger hash = calculateHash(value);
             BigInteger hashRightShifted = hash;
+            logger.finest("Computed hash:" + hashRightShifted.toString(16));
 
             int hashRequiredBits = (1 << filterSize2Power) - 1;
             BigInteger bigIntHashRequiredBits = new BigInteger(Integer.toString(hashRequiredBits));
 
             for (int i = 0; i < hashIndexes; i++) {
                 hashValue[i] = hashRightShifted.and(bigIntHashRequiredBits).intValue();
-                hashRightShifted = hash.shiftRight(filterSize2Power);
+                hashRightShifted = hashRightShifted.shiftRight(filterSize2Power); // 1 bit is getting wasted, since sha256 has 32 bytes, so issue for now
             }
         }
         catch (NoSuchAlgorithmException ex) {
@@ -75,8 +77,8 @@ public class BloomFilter {
         return hashValue;
     }
 
-    void logValueNHashIndexes(String value, int[] hashValues) {
-        String hashIdxMsg = "For input: \"" + value + "\", HashIdx:";
+    void logValueNHashIndexes(String value, int[] hashValues, String caller) {
+        String hashIdxMsg = "For " + caller + " input: \"" + value + "\", HashIdx:";
         for(int hashIdx: hashValues) {
             hashIdxMsg += hashIdx + ", ";
         }
@@ -86,7 +88,7 @@ public class BloomFilter {
     public void setValue(String value) throws BfException {
         int hashValues[] = getHashIndexes(value);
         // Log value and all hash indexes at DEBUG level, for cornering any bug in BF.
-        logValueNHashIndexes(value, hashValues);
+        logValueNHashIndexes(value, hashValues, "SET");
 
         for(int i = 0; i < hashValues.length; i++) {
            this.bitSet.set(hashValues[i]);
@@ -96,7 +98,7 @@ public class BloomFilter {
     public boolean checkValueIfExists(String value) throws BfException {
         int hashValues[] = getHashIndexes(value);
         // Log value and all hash indexes at DEBUG level, for cornering any bug in BF.
-        logValueNHashIndexes(value, hashValues);
+        logValueNHashIndexes(value, hashValues, "GET");
 
         boolean exists = true;
         for(int i = 0; i < hashValues.length; i++) {

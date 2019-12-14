@@ -1,56 +1,76 @@
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 INFO: Initializing Bloofilter for word dictionary
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
-INFO: Adding these words to dictionary:
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter <init>
+INFO: Number of bits required: 16
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
+INFO: ADDING these words to dictionary:
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Adding word: "test"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "test", HashIdx:2568, 45296, 45296, 45296, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:-60792f7e77b3829a65d0155f3aa52fea5c40b0e4d4f47dd32ea293ea4f0ff5f8
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For SET input: "test", HashIdx:2568, 45296, 27669, 53597, 33324, 11019, 20251, 41919, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Adding word: "this"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "this", HashIdx:33800, 39700, 39700, 39700, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:1eb79602411ef02cf6fe117897015fff89f80face4eccd50425c45149b148408
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For SET input: "this", HashIdx:33800, 39700, 17684, 16988, 52560, 58604, 4012, 35320, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Adding word: "program"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "program", HashIdx:18648, 9461, 9461, 9461, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:1310ca2c8932dbd118668bd97442558a3e1f546b5e15c69699dfbd6024f548d8
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For SET input: "program", HashIdx:18648, 9461, 48480, 39391, 50838, 24085, 21611, 15903, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 INFO: CHECKING these words in our dictionary:
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE: Checking word: "test"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "test", HashIdx:2568, 45296, 45296, 45296, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:-60792f7e77b3829a65d0155f3aa52fea5c40b0e4d4f47dd32ea293ea4f0ff5f8
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For GET input: "test", HashIdx:2568, 45296, 27669, 53597, 33324, 11019, 20251, 41919, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Found in our dictionary..PASSED.
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE: Checking word: "this"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "this", HashIdx:33800, 39700, 39700, 39700, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:1eb79602411ef02cf6fe117897015fff89f80face4eccd50425c45149b148408
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For GET input: "this", HashIdx:33800, 39700, 17684, 16988, 52560, 58604, 4012, 35320, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Found in our dictionary..PASSED.
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE: Checking word: "program"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "program", HashIdx:18648, 9461, 9461, 9461, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:1310ca2c8932dbd118668bd97442558a3e1f546b5e15c69699dfbd6024f548d8
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For GET input: "program", HashIdx:18648, 9461, 48480, 39391, 50838, 24085, 21611, 15903, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Found in our dictionary..PASSED.
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 INFO: CHECKING these non-existing words in our dictionary:
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE: Checking word: "bloomfilter"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "bloomfilter", HashIdx:31450, 1427, 1427, 1427, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:24b152d919908ddda3346ce2e28e5961c834ca348c4131126330b4c905937ada
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For GET input: "bloomfilter", HashIdx:31450, 1427, 46281, 25392, 12562, 35905, 51764, 51252, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Not able to find in our dictionary.PASSED..
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE: Checking word: "is"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "is", HashIdx:22518, 16751, 16751, 16751, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:-5ae02b6540988fa295ca2e7de73eea00a9cc513e061402362a2b6a9be90a80a
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For GET input: "is", HashIdx:22518, 16751, 18774, 40285, 49116, 8094, 15084, 62819, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Not able to find in our dictionary.PASSED..
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE: Checking word: "great"
-Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
-FINEST: For input: "great", HashIdx:38704, 54414, 54414, 54414, 
-Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter getHashIndexes
+FINEST: Computed hash:-7889a259330f997dc73e2d83ca96d1ee4b31163f1a32a8ec5c091b9d2b7168d0
+Dec 13, 2019 7:02:00 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For GET input: "great", HashIdx:38704, 54414, 58466, 41974, 22291, 58829, 59840, 46286, 
+Dec 13, 2019 7:02:00 PM test.msft.application.AppMain main
 FINE:  Not able to find in our dictionary.PASSED..
