@@ -1,0 +1,56 @@
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+INFO: Initializing Bloofilter for word dictionary
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+INFO: Adding these words to dictionary:
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Adding word: "test"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "test", HashIdx:2568, 45296, 45296, 45296, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Adding word: "this"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "this", HashIdx:33800, 39700, 39700, 39700, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Adding word: "program"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "program", HashIdx:18648, 9461, 9461, 9461, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+INFO: CHECKING these words in our dictionary:
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE: Checking word: "test"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "test", HashIdx:2568, 45296, 45296, 45296, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Found in our dictionary..PASSED.
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE: Checking word: "this"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "this", HashIdx:33800, 39700, 39700, 39700, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Found in our dictionary..PASSED.
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE: Checking word: "program"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "program", HashIdx:18648, 9461, 9461, 9461, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Found in our dictionary..PASSED.
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+INFO: CHECKING these non-existing words in our dictionary:
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE: Checking word: "bloomfilter"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "bloomfilter", HashIdx:31450, 1427, 1427, 1427, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Not able to find in our dictionary.PASSED..
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE: Checking word: "is"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "is", HashIdx:22518, 16751, 16751, 16751, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Not able to find in our dictionary.PASSED..
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE: Checking word: "great"
+Dec 13, 2019 7:39:39 PM test.msft.bloomfilter.BloomFilter logValueNHashIndexes
+FINEST: For input: "great", HashIdx:38704, 54414, 54414, 54414, 
+Dec 13, 2019 7:39:39 PM test.msft.application.AppMain main
+FINE:  Not able to find in our dictionary.PASSED..
