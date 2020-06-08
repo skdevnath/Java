@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+
+import javax.swing.tree.TreeNode;
 
 public class FourSumMain {
     /*
@@ -48,7 +51,6 @@ public class FourSumMain {
         }
 
         for(int i=0; i<nums.length-1;i++){
-
             for(int j=i+1;j<nums.length;j++){
                 int lo=j+1;
                 int hi=nums.length -1;

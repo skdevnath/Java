@@ -3,6 +3,8 @@ import java.lang.*;
 
 /*
 Dynamic programming:
+Memoization (Top Down) - recursion is done. It starts from N to 1.
+
 
 https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair/0
 Hint: Start reverse i.e. top of the stair. Top down approach. Memoization.
@@ -11,7 +13,8 @@ Another way to solve is by avoiding recursion i.e. Tabulation. e.g. following.
 https://leetcode.com/problems/climbing-stairs/discuss/25299/Basically-it's-a-fibonacci.
 
 
-There are N stairs, a person standing at the bottom wants to reach the top. The person can climb either 1 stair or 2 stairs at a time. Count the number of ways, the person can reach the top (order does matter).
+There are N stairs, a person standing at the bottom wants to reach the top. The person can climb either 1 stair or 2 stairs at a time.
+Count the number of ways, the person can reach the top (order does matter).
 
 Input:
 The first line contains an integer 'T' denoting the total number of test cases. In each test cases, an integer N will be given.
@@ -44,7 +47,7 @@ class Main {
         for (int i = 0; i < cases; i++) {
             int steps = scan.nextInt();
             System.out.println("Calling fw for step: " + steps);
-            int totalWays = (steps);
+            int totalWays = fw(steps);
             System.out.println("   Total ways: " + totalWays);
         }
         scan.close();
