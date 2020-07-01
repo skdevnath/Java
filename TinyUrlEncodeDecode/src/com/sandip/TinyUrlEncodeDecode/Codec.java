@@ -1,3 +1,14 @@
+/*
+ Here issue is in case of collision what you do ? Included educative.io design pdf file, where it suggest to
+ add a seq number and user number until you make URL encoded value unique (hash).
+
+ geekforgeek did it simply using DB entry unique ID for encoding: https://www.geeksforgeeks.org/how-to-design-a-tiny-url-or-url-shortener/
+  Problem is how to get this, without record insert.
+
+  So may be educative.io looks good ?
+ */
+
+
 package com.sandip.TinyUrlEncodeDecode;
 
 import java.util.HashMap;
@@ -29,7 +40,7 @@ public class Codec {
 			}
 			encryptedString = newDigest;
 			// System.out.printf("  alpha msgDigestLen:%d, digest:%s\n", encryptedString.length(), encryptedString);
-			
+
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,7 +50,7 @@ public class Codec {
 		}
 		return new String("http://tinyurl.com/" + encryptedString);
 	}
-	
+
 	private class UrlList {
 		UrlList next;
 		String tinyUrl;
@@ -78,13 +89,13 @@ public class Codec {
 			url2TinyUrlDb.put(hash, urlEntry);
 			tinyUrl2UrlDb.put(tinyUrl, url);
 		} else {
-			UrlList currEntry = urlEntry; 
-			UrlList lastEntry = urlEntry; 
+			UrlList currEntry = urlEntry;
+			UrlList lastEntry = urlEntry;
 			int i = 0;
 			boolean found = false;
 			while (currEntry != null) {
 				if (currEntry.url == url) {
-					found = true; 
+					found = true;
 					tinyUrl = currEntry.tinyUrl;
 					break;
 				}
@@ -106,6 +117,6 @@ public class Codec {
 
     // Decodes a shortened URL to its original URL.
     public String decode(String tinyUrl) {
-       return tinyUrl2UrlDb.get(tinyUrl); 
+       return tinyUrl2UrlDb.get(tinyUrl);
     }
 }
