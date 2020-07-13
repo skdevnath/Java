@@ -1,4 +1,4 @@
-package score.test.com;
+package com.score;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package score.test.com;
+package com.score;
 
 import java.util.Collections;
 import java.util.HashMap;

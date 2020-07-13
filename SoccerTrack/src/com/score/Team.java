@@ -1,4 +1,4 @@
-package score.test.com;
+package com.score;
 
 class Team {
     final String name;
