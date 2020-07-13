@@ -2,8 +2,12 @@ public class Main {
     // Dynamic programming: https://www.geeksforgeeks.org/dynamic-programming/
     //
     // https://www.geeksforgeeks.org/edit-distance-dp-using-memoization/
+    // Never look into Leet code solution, it is confusing.
+    //  i.e. https://leetcode.com/problems/edit-distance/solution/
+    // Best solution is in G4G.
     // Edit Distance | DP using Memoization
-    //Given two strings str1 and str2 and below operations that can be performed on str1. Find the minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.
+    //Given two strings str1 and str2 and below operations that can be performed on str1.
+    // Find the minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.
     //
     //Insert
     //Remove
